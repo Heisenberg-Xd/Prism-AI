@@ -1,0 +1,623 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* System dark theme - pgAdmin/DataGrip inspired */
+    --background: 220 16% 8%;
+    --foreground: 220 10% 90%;
+
+    --card: 220 16% 10%;
+    --card-foreground: 220 10% 90%;
+
+    --popover: 220 16% 12%;
+    --popover-foreground: 220 10% 90%;
+
+    /* Deep purple accent */
+    --primary: 270 60% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 270 70% 65%;
+
+    --secondary: 220 16% 14%;
+    --secondary-foreground: 220 10% 80%;
+
+    --muted: 220 16% 16%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 270 50% 25%;
+    --accent-foreground: 270 60% 75%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 0%;
+
+    --border: 220 16% 18%;
+    --input: 220 16% 14%;
+    --ring: 270 60% 55%;
+
+    --radius: 0.25rem;
+
+    /* Panel system colors */
+    --panel: 220 16% 11%;
+    --panel-header: 220 16% 13%;
+    --panel-border: 220 16% 20%;
+    --panel-active: 270 50% 20%;
+
+    /* Menu bar */
+    --menu-bar: 220 16% 10%;
+    --menu-item-hover: 220 16% 18%;
+    --menu-item-active: 270 50% 25%;
+
+    /* Sidebar tree */
+    --tree-item-hover: 220 16% 15%;
+    --tree-item-selected: 270 50% 20%;
+    --tree-indent: 16px;
+
+    /* Editor */
+    --editor-bg: 220 16% 9%;
+    --editor-line-number: 220 10% 35%;
+    --editor-selection: 270 50% 30%;
+    --editor-cursor: 270 60% 60%;
+
+    /* SQL Syntax highlighting */
+    --syntax-keyword: 270 70% 70%;
+    --syntax-string: 142 60% 60%;
+    --syntax-number: 38 80% 65%;
+    --syntax-function: 200 80% 65%;
+    --syntax-comment: 220 10% 45%;
+    --syntax-operator: 0 70% 65%;
+
+    /* Output panel */
+    --output-bg: 220 16% 7%;
+    --output-timestamp: 220 10% 45%;
+    --output-info: 200 80% 65%;
+    --output-warning: 38 92% 60%;
+    --output-error: 0 70% 60%;
+    --output-success: 142 70% 55%;
+
+    /* Scrollbar */
+    --scrollbar-track: 220 16% 10%;
+    --scrollbar-thumb: 220 16% 25%;
+    --scrollbar-thumb-hover: 220 16% 35%;
+
+    /* Fonts */
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+
+    --sidebar-background: 220 16% 9%;
+    --sidebar-foreground: 220 10% 80%;
+    --sidebar-primary: 270 60% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 270 50% 20%;
+    --sidebar-accent-foreground: 220 10% 90%;
+    --sidebar-border: 220 16% 18%;
+    --sidebar-ring: 270 60% 55%;
+  }
+
+  .light {
+    --background: 220 20% 97%;
+    --foreground: 220 20% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+    --primary: 270 60% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 15% 92%;
+    --secondary-foreground: 220 20% 20%;
+    --muted: 220 15% 94%;
+    --muted-foreground: 220 10% 45%;
+    --accent: 270 40% 92%;
+    --accent-foreground: 270 60% 40%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 15% 88%;
+    --input: 220 15% 92%;
+    --ring: 270 60% 50%;
+    --panel: 220 15% 95%;
+    --panel-header: 220 15% 92%;
+    --panel-border: 220 15% 85%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html, body, #root {
+    @apply h-full overflow-hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--scrollbar-track));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--scrollbar-thumb));
+    border-radius: 5px;
+    border: 2px solid hsl(var(--scrollbar-track));
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--scrollbar-thumb-hover));
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: hsl(var(--scrollbar-track));
+  }
+}
+
+@layer components {
+  /* Menu bar styles */
+  .menu-bar {
+    @apply h-8 flex items-center px-2 gap-1 border-b select-none;
+    background: hsl(var(--menu-bar));
+    border-color: hsl(var(--panel-border));
+  }
+
+  .menu-item {
+    @apply px-3 py-1 text-sm cursor-pointer rounded-sm transition-colors;
+    color: hsl(var(--foreground) / 0.8);
+  }
+
+  .menu-item:hover {
+    background: hsl(var(--menu-item-hover));
+    color: hsl(var(--foreground));
+  }
+
+  .menu-item.active {
+    background: hsl(var(--menu-item-active));
+    color: hsl(var(--primary-foreground));
+  }
+
+  /* Panel system */
+  .panel {
+    @apply flex flex-col overflow-hidden;
+    background: hsl(var(--panel));
+    border-color: hsl(var(--panel-border));
+  }
+
+  .panel-header {
+    @apply h-8 min-h-8 flex items-center justify-between px-3 border-b select-none;
+    background: hsl(var(--panel-header));
+    border-color: hsl(var(--panel-border));
+  }
+
+  .panel-title {
+    @apply text-xs font-semibold uppercase tracking-wider;
+    color: hsl(var(--foreground) / 0.7);
+  }
+
+  .panel-content {
+    @apply flex-1 overflow-auto;
+  }
+
+  /* Tree view */
+  .tree-item {
+    @apply flex items-center gap-2 px-2 py-1 cursor-pointer text-sm transition-colors;
+    color: hsl(var(--foreground) / 0.8);
+    padding-left: calc(var(--depth, 0) * var(--tree-indent) + 8px);
+  }
+
+  .tree-item:hover {
+    background: hsl(var(--tree-item-hover));
+  }
+
+  .tree-item.selected {
+    background: hsl(var(--tree-item-selected));
+    color: hsl(var(--foreground));
+  }
+
+  .tree-icon {
+    @apply w-4 h-4 flex-shrink-0;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .tree-item.selected .tree-icon {
+    color: hsl(var(--primary));
+  }
+
+  /* Tabs */
+  .tabs-container {
+    @apply flex items-center h-9 border-b overflow-x-auto;
+    background: hsl(var(--panel-header));
+    border-color: hsl(var(--panel-border));
+  }
+
+  .tab {
+    @apply flex items-center gap-2 px-4 h-full text-sm cursor-pointer border-r transition-colors;
+    color: hsl(var(--foreground) / 0.7);
+    border-color: hsl(var(--panel-border));
+  }
+
+  .tab:hover {
+    background: hsl(var(--muted) / 0.5);
+  }
+
+  .tab.active {
+    background: hsl(var(--panel));
+    color: hsl(var(--foreground));
+    border-bottom: 2px solid hsl(var(--primary));
+    margin-bottom: -1px;
+  }
+
+  /* Code/SQL editor styling */
+  .code-editor {
+    @apply font-mono text-sm p-4;
+    background: hsl(var(--editor-bg));
+    line-height: 1.6;
+    tab-size: 2;
+  }
+
+  .code-editor::selection,
+  .code-editor *::selection {
+    background: hsl(var(--editor-selection));
+  }
+
+  .sql-keyword {
+    color: hsl(var(--syntax-keyword));
+    font-weight: 500;
+  }
+
+  .sql-string {
+    color: hsl(var(--syntax-string));
+  }
+
+  .sql-number {
+    color: hsl(var(--syntax-number));
+  }
+
+  .sql-function {
+    color: hsl(var(--syntax-function));
+  }
+
+  .sql-comment {
+    color: hsl(var(--syntax-comment));
+    font-style: italic;
+  }
+
+  /* Output/Logs */
+  .output-panel {
+    background: hsl(var(--output-bg));
+  }
+
+  .log-entry {
+    @apply flex gap-2 px-3 py-0.5 text-xs font-mono border-b;
+    border-color: hsl(var(--panel-border) / 0.3);
+  }
+
+  .log-timestamp {
+    color: hsl(var(--output-timestamp));
+    flex-shrink: 0;
+  }
+
+  .log-message {
+    @apply flex-1;
+  }
+
+  .log-info .log-message {
+    color: hsl(var(--output-info));
+  }
+
+  .log-warning .log-message {
+    color: hsl(var(--output-warning));
+  }
+
+  .log-error .log-message {
+    color: hsl(var(--output-error));
+  }
+
+  .log-success .log-message {
+    color: hsl(var(--output-success));
+  }
+
+  /* Button variants for system UI */
+  .btn-system {
+    @apply inline-flex items-center justify-center gap-2 px-3 py-1.5 text-xs font-medium rounded transition-colors;
+    background: hsl(var(--secondary));
+    color: hsl(var(--foreground) / 0.9);
+    border: 1px solid hsl(var(--panel-border));
+  }
+
+  .btn-system:hover {
+    background: hsl(var(--muted));
+  }
+
+  .btn-system:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn-system;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    border-color: hsl(var(--primary));
+  }
+
+  .btn-primary:hover {
+    background: hsl(var(--primary-glow));
+  }
+
+  .btn-danger {
+    @apply btn-system;
+    background: hsl(var(--destructive) / 0.2);
+    color: hsl(var(--destructive));
+    border-color: hsl(var(--destructive) / 0.3);
+  }
+
+  .btn-danger:hover {
+    background: hsl(var(--destructive) / 0.3);
+  }
+
+  /* Form inputs for system UI */
+  .input-system {
+    @apply w-full px-3 py-2 text-sm rounded outline-none transition-colors;
+    background: hsl(var(--input));
+    border: 1px solid hsl(var(--panel-border));
+    color: hsl(var(--foreground));
+  }
+
+  .input-system:focus {
+    border-color: hsl(var(--primary));
+    box-shadow: 0 0 0 1px hsl(var(--primary) / 0.3);
+  }
+
+  .input-system::placeholder {
+    color: hsl(var(--muted-foreground));
+  }
+
+  /* Modal/Dialog */
+  .modal-overlay {
+    @apply fixed inset-0 z-50 flex items-center justify-center;
+    background: hsl(220 16% 5% / 0.8);
+    backdrop-filter: blur(2px);
+  }
+
+  .modal-content {
+    @apply rounded-lg shadow-2xl overflow-hidden;
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--panel-border));
+    min-width: 400px;
+    max-width: 90vw;
+    max-height: 90vh;
+  }
+
+  .modal-header {
+    @apply flex items-center justify-between px-4 py-3 border-b;
+    background: hsl(var(--panel-header));
+    border-color: hsl(var(--panel-border));
+  }
+
+  .modal-title {
+    @apply text-sm font-semibold;
+  }
+
+  .modal-body {
+    @apply p-4;
+  }
+
+  .modal-footer {
+    @apply flex items-center justify-end gap-2 px-4 py-3 border-t;
+    background: hsl(var(--panel-header));
+    border-color: hsl(var(--panel-border));
+  }
+
+  /* Dropdown menu */
+  .dropdown-menu {
+    @apply absolute z-50 min-w-[180px] py-1 rounded shadow-xl;
+    background: hsl(var(--popover));
+    border: 1px solid hsl(var(--panel-border));
+  }
+
+  .dropdown-item {
+    @apply flex items-center gap-2 px-3 py-1.5 text-sm cursor-pointer transition-colors;
+    color: hsl(var(--foreground) / 0.9);
+  }
+
+  .dropdown-item:hover {
+    background: hsl(var(--menu-item-hover));
+  }
+
+  .dropdown-item.danger {
+    color: hsl(var(--destructive));
+  }
+
+  .dropdown-separator {
+    @apply my-1 border-t;
+    border-color: hsl(var(--panel-border));
+  }
+
+  /* Resizer */
+  .resizer {
+    @apply flex-shrink-0 transition-colors;
+    background: hsl(var(--panel-border));
+  }
+
+  .resizer:hover, .resizer.active {
+    background: hsl(var(--primary));
+  }
+
+  .resizer-h {
+    @apply w-1 cursor-col-resize;
+  }
+
+  .resizer-v {
+    @apply h-1 cursor-row-resize;
+  }
+
+  /* Status indicators */
+  .status-dot {
+    @apply w-2 h-2 rounded-full;
+  }
+
+  .status-active {
+    background: hsl(var(--success));
+    box-shadow: 0 0 6px hsl(var(--success) / 0.6);
+  }
+
+  .status-pending {
+    background: hsl(var(--warning));
+    animation: pulse 1.5s infinite;
+  }
+
+  .status-error {
+    background: hsl(var(--destructive));
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  /* AI Chat styling */
+  .ai-message {
+    @apply p-3 rounded-lg text-sm;
+  }
+
+  .ai-message.user {
+    background: hsl(var(--primary) / 0.15);
+    border: 1px solid hsl(var(--primary) / 0.3);
+    margin-left: 40px;
+  }
+
+  .ai-message.assistant {
+    background: hsl(var(--secondary));
+    border: 1px solid hsl(var(--panel-border));
+    margin-right: 40px;
+  }
+
+  .sql-preview {
+    @apply mt-2 p-3 rounded text-xs font-mono overflow-x-auto;
+    background: hsl(var(--editor-bg));
+    border: 1px solid hsl(var(--panel-border));
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 text-xs font-medium rounded;
+  }
+
+  .badge-read {
+    background: hsl(var(--success) / 0.2);
+    color: hsl(var(--success));
+  }
+
+  .badge-structural {
+    background: hsl(var(--warning) / 0.2);
+    color: hsl(var(--warning));
+  }
+
+  .badge-destructive {
+    background: hsl(var(--destructive) / 0.2);
+    color: hsl(var(--destructive));
+  }
+
+  /* Table styling for results */
+  .result-table {
+    @apply w-full text-xs font-mono;
+    border-collapse: collapse;
+  }
+
+  .result-table th {
+    @apply px-3 py-2 text-left font-semibold border-b;
+    background: hsl(var(--panel-header));
+    border-color: hsl(var(--panel-border));
+    color: hsl(var(--foreground) / 0.8);
+  }
+
+  .result-table td {
+    @apply px-3 py-1.5 border-b;
+    border-color: hsl(var(--panel-border) / 0.5);
+  }
+
+  .result-table tr:hover td {
+    background: hsl(var(--tree-item-hover));
+  }
+
+  /* Connection string styling */
+  .connection-string {
+    @apply flex items-center gap-2 p-3 rounded font-mono text-xs;
+    background: hsl(var(--editor-bg));
+    border: 1px solid hsl(var(--panel-border));
+  }
+
+  .connection-string code {
+    @apply flex-1 overflow-x-auto whitespace-nowrap;
+    color: hsl(var(--syntax-string));
+  }
+
+  /* Keyboard shortcut */
+  .kbd {
+    @apply inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-mono rounded;
+    background: hsl(var(--muted));
+    border: 1px solid hsl(var(--panel-border));
+    color: hsl(var(--muted-foreground));
+    min-width: 20px;
+  }
+
+  /* Schema tree */
+  .schema-tree {
+    @apply py-2;
+  }
+
+  .schema-tree .tree-item {
+    @apply py-1;
+  }
+
+  /* Schema highlight animation */
+  .schema-highlight {
+    animation: schema-flash 2s ease-out;
+  }
+
+  @keyframes schema-flash {
+    0% {
+      background: hsl(var(--success) / 0.3);
+    }
+    100% {
+      background: transparent;
+    }
+  }
+
+  /* AI Console styling */
+  .ai-console-entry {
+    @apply border-b border-panel-border;
+  }
+
+  .ai-console-entry:last-child {
+    @apply border-b-0;
+  }
+
+  /* Command prompt styling */
+  .command-prompt {
+    @apply text-primary font-mono font-bold;
+  }
+}
+
+@layer utilities {
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+}
