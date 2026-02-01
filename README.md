@@ -1,73 +1,168 @@
-# Welcome to your Lovable project
+# Prism AI 🌈
 
-## Project info
+**Prism AI** is an AI-powered database management tool that lets you create, manage, and explore databases using natural human language. No complex queries, no steep learning curve — just tell Prism AI what you want, and it handles the rest.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Prism AI is built with a strong focus on **safety**, **simplicity**, and a **user‑friendly experience**, making database management accessible for developers, teams, and non-technical users alike.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🚀 What is Prism AI?
 
-**Use Lovable**
+Prism AI allows you to interact with databases the same way you interact with a human.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+You can:
 
-Changes made via Lovable will be committed automatically to this repo.
+* Create databases using plain English
+* Manage tables and records without writing SQL
+* Safely query and explore data
+* Connect databases directly to your personal or professional projects
 
-**Use your preferred IDE**
+Whether you're building an application, managing internal tools, or experimenting with AI workflows, Prism AI makes database operations fast, intuitive, and reliable.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## ✨ Key Features
 
-Follow these steps:
+### 🧠 Human Language Database Management
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+Control your database using natural language prompts like:
+
+* "Create a users table with name, email, and role"
+* "Add a safety flag to this database"
+* "Show me all users created in the last 7 days"
+
+No SQL knowledge required.
+
+---
+
+### 🔐 Safety Mode
+
+Prism AI includes a built‑in **Safety Mode** to prevent:
+
+* Dangerous or destructive operations
+* Accidental data loss
+* Unauthorized schema changes
+
+Safety Mode ensures your data stays protected while still allowing flexibility.
+
+---
+
+### 🎨 Easy & User‑Friendly UI
+
+* Clean and modern interface
+* Beginner‑friendly design
+* Easy navigation and database exploration
+
+You can view schemas, tables, and records without confusion or clutter.
+
+---
+
+### 🔌 Easy Project Integration
+
+Prism AI can be easily connected to:
+
+* Personal projects
+* Web applications
+* Internal tools
+
+Databases created in Prism AI are simple to connect, easy to manage, and ready to scale.
+
+---
+
+### 🔍 Simple Data Exploration
+
+* Browse tables visually
+* Ask questions in natural language
+* Quickly understand your data without complex queries
+
+---
+
+## 🛠️ Tech Stack
+
+This project is built using:
+
+* Vite
+* TypeScript
+* React
+* Tailwind CSS
+* shadcn/ui
+* AI-powered language processing
+
+---
+
+## 🧩 How It Works
+
+1. Describe your database or query in natural language
+2. Prism AI interprets your request
+3. Safety checks are applied
+4. The database action is executed
+5. Results are displayed in a clean, readable format
+
+---
+
+## 📦 Installation & Development
+
+### Prerequisites
+
+* Node.js
+* npm or yarn
+
+### Setup
+
+```bash
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate into the project directory
+cd prism-ai
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🚀 Deployment
 
-**Use GitHub Codespaces**
+Prism AI can be deployed easily using **Lovable**:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. Open the project in Lovable
+2. Click **Share → Publish**
+3. Your project will be live instantly
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## 🌐 Custom Domain Support
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+You can connect a custom domain:
 
-## How can I deploy this project?
+* Go to **Project → Settings → Domains**
+* Click **Connect Domain**
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+## 🎯 Vision
 
-Yes, you can!
+Prism AI aims to remove the complexity of database management by combining:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+* Artificial Intelligence
+* Strong safety principles
+* A human‑centered design
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Our goal is to make databases **easy to create, easy to connect, and easy to explore** — for everyone.
+
+---
+
+## 🤝 Contributing
+
+Contributions, ideas, and feedback are welcome.
+Feel free to fork the project and submit pull requests.
+
+---
+
+
+**Prism AI — See your data clearly. Manage it naturally.** 🌈
+
