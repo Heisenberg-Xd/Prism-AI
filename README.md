@@ -1,39 +1,41 @@
- ██████╗██████╗ ██╗███████╗███╗   ███╗    █████╗ ██╗
-██╔══██╗██╔══██╗██║██╔════╝████╗ ████║   ██╔══██╗██║
-██████╔╝██████╔╝██║███████╗██╔████╔██║   ███████║██║
-██╔═══╝ ██╔══██╗██║╚════██║██║╚██╔╝██║   ██╔══██║██║
-██║     ██║  ██║██║███████║██║ ╚═╝ ██║   ██║  ██║██║
-╚═╝     ╚═╝  ╚═╝╚═╝╚══════╝╚═╝     ╚═╝   ╚═╝  ╚═╝╚═╝
-AI-Powered Database Management Engine · Create · Query · Explore
-Electron React Vite TypeScript Supabase TailwindCSS
+```text
+ ____  ____  ____  ____  _  _      __   ____ 
+(  _ \(  _ \(_  _)/ ___)( \/ )    / _\ (_  _)
+ ) __/ )   / _)(_ \___ \ )  (    /    \ _)(_ 
+(__)  (__\_)(____)(____/(_/\/\_) \_/\_/(____)
+```
+**AI-Powered Database Management Engine · Create · Query · Explore**
+*Electron · React · Vite · TypeScript · Supabase · TailwindCSS*
 
-🚀 PRISM AI DESKTOP 🚀
+---
 
-✦ Overview
+🚀 **PRISM AI DESKTOP** 🚀
+
+✦ **Overview**
 Prism AI is a powerful, AI-driven database management desktop application that lets you create, manage, and explore databases using natural human language. No complex queries, no steep learning curve — just tell Prism AI what you want, and it handles the rest. Built with a strong focus on safety, simplicity, and a user‑friendly experience, making database management accessible directly from your desktop.
 
-"See your data clearly. Manage it naturally."
+> *"See your data clearly. Manage it naturally."*
 
-✦ Key Features
+✦ **Key Features**
 | Feature | Description |
-|---|---|
-| 🧠 Human Language Management | Control your database using natural language prompts without writing SQL |
-| 🔐 Built-in Safety Mode | Prevents dangerous or destructive operations, accidental data loss, and unauthorized schema changes |
-| 🎨 Native Desktop Experience | Fast, lightweight Electron-based desktop app with a clean and modern interface |
-| 🔌 Easy Project Integration | Seamlessly connect to your existing Supabase projects or external databases |
-| 🔍 Simple Data Exploration | Browse tables visually and ask questions in natural language |
+| :--- | :--- |
+| 🧠 **Human Language Management** | Control your database using natural language prompts without writing SQL |
+| 🔐 **Built-in Safety Mode** | Prevents dangerous or destructive operations and accidental data loss |
+| 🎨 **Native Desktop Experience** | Fast, lightweight Electron-based app with a clean, modern interface |
+| 🔌 **Easy Project Integration** | Seamlessly connect to your existing Supabase projects |
+| 🔍 **Simple Data Exploration** | Browse tables visually and ask questions in natural language |
 
-✦ Tech Stack
+✦ **Tech Stack**
 **Core Application Layer**
 | Layer | Technology |
-|---|---|
+| :--- | :--- |
 | Desktop Framework | Electron (Electron Forge & Builder) |
 | Framework | React 18 + TypeScript |
 | Build Tool | Vite + SWC |
 
 **Styling & UI**
 | Layer | Technology |
-|---|---|
+| :--- | :--- |
 | Styling | Tailwind CSS |
 | UI Components | shadcn/ui & Radix UI |
 | Icons | Lucide React |
@@ -41,12 +43,12 @@ Prism AI is a powerful, AI-driven database management desktop application that l
 
 **Data Management & State**
 | Layer | Technology |
-|---|---|
+| :--- | :--- |
 | Database Client | Supabase Client (`@supabase/supabase-js`) |
 | State Management| TanStack React Query |
 | Form Validation | React Hook Form + Zod |
 
-✦ Project Structure
+✦ **Project Structure**
 ```text
 prism-ai/
 │
@@ -54,19 +56,17 @@ prism-ai/
 ├── 📄 forge.config.cjs            # Electron Forge configuration
 ├── 📄 package.json                # Project dependencies and scripts
 ├── 📄 vite.config.ts              # Vite bundler configuration
-├── 📄 tailwind.config.ts          # Tailwind CSS styling configuration
 │
 ├── 📁 src/                        # React application (Renderer process)
 │   ├── 📁 components/             # Reusable UI components (shadcn/ui)
 │   ├── 📁 pages/                  # Route-level page components
-│   ├── 📁 lib/                    # Utility functions and shared logic
 │   └── 📄 main.tsx                # React application entry point
 │
 ├── 📁 public/                     # Static frontend assets
 └── 📁 assets/                     # Desktop application icons and assets
 ```
 
-✦ Getting Started
+✦ **Getting Started**
 **Prerequisites**
 * Node.js (v18+ recommended)
 * npm, yarn, or bun
@@ -86,7 +86,6 @@ npm install
 # Start the development server (runs Vite and Electron concurrently)
 npm run dev
 ```
-The React app runs locally while the Electron window loads it directly.
 
 **3 · Build for Production**
 ```bash
@@ -98,49 +97,28 @@ npm run package
 npm run make
 ```
 
-✦ AI Interaction Examples
-┌──────────────────────────────────────────────────────────────────┐
-│  CREATE  │  "Create a users table with name, email, and role"        │
-│          │  → Generates table schema and applies it safely           │
-├──────────────────────────────────────────────────────────────────┤
-│  QUERY   │  "Show me all users created in the last 7 days"           │
-│          │  → Fetches records and displays in a clean data table     │
-├──────────────────────────────────────────────────────────────────┤
-│  MODIFY  │  "Add a safety flag to this database"                     │
-│          │  → Alters schema with proper user confirmation            │
-└──────────────────────────────────────────────────────────────────┘
+✦ **AI Interaction Examples**
+| User Prompt | Prism Action |
+| :--- | :--- |
+| **"Create a users table..."** | Generates schema & applies it safely |
+| **"Show me all users..."** | Fetches & displays in data table |
+| **"Add a safety flag..."** | Alters schema with user confirmation |
 
-✦ Intelligence Pipeline
-  Natural Language Input
-      │
-      ▼
-  AI Processing Engine
-  ┌─────────────────────────────────────────┐
-  │  • Intent Recognition & Parsing         │
-  │  • SQL Query / Schema Generation        │
-  └─────────────────────────────────────────┘
-      │
-      ▼
-  Safety Validation Layer
-  ┌─────────────────────────────────────────┐
-  │  • Destructive action detection         │
-  │  • Schema constraint validation         │
-  │  • User confirmation prompt             │
-  └─────────────────────────────────────────┘
-      │
-      ▼
-  Database Execution
-  ┌─────────────────────────────────────────┐
-  │  • Supabase API Integration             │
-  │  • Real-time data fetch/mutation        │
-  └─────────────────────────────────────────┘
-      │
-      ▼
-  Clean UI Presentation
+✦ **Intelligence Pipeline**
+```text
+1. 💡 Natural Language Input
+       ↓
+2. 🤖 AI Processing (NLP → SQL)
+       ↓
+3. 🛡️ Safety Validation Layer
+       ↓
+4. ⚡ Database Execution (Supabase)
+       ↓
+5. ✨ Results Presentation (UI)
+```
 
-✦ Contributing
-Contributions are welcome and appreciated! Here's how to get started:
-
+✦ **Contributing**
+Contributions are welcome and appreciated!
 ```bash
 # 1. Fork the repo
 # 2. Create your feature branch
@@ -153,11 +131,11 @@ git commit -m "feat: add your amazing feature"
 git push origin feature/your-amazing-feature
 ```
 
-✦ Acknowledgements
-* Electron — for cross-platform desktop application capabilities
-* Supabase — for powerful open-source database infrastructure
-* shadcn/ui — for beautiful, accessible UI components
-* Vite — for the blazing-fast developer experience
+✦ **Acknowledgements**
+* **Electron** — for cross-platform desktop application capabilities
+* **Supabase** — for powerful open-source database infrastructure
+* **shadcn/ui** — for beautiful, accessible UI components
+* **Vite** — for the blazing-fast developer experience
 
-Built with ❤️  by Kartikesh Gaonkar
-See your data clearly · Manage it naturally
+Built with ❤️ by **Kartikesh Gaonkar**
+*See your data clearly · Manage it naturally*
