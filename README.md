@@ -1,11 +1,26 @@
+<div align="center">
+
 ```text
- ____  ____  ____  ____  _  _      __   ____ 
-(  _ \(  _ \(_  _)/ ___)( \/ )    / _\ (_  _)
- ) __/ )   / _)(_ \___ \ )  (    /    \ _)(_ 
-(__)  (__\_)(____)(____/(_/\/\_) \_/\_/(____)
+██████╗ ██████╗ ██╗███████╗███╗   ███╗     █████╗ ██╗
+██╔══██╗██╔══██╗██║██╔════╝████╗ ████║    ██╔══██╗██║
+██████╔╝██████╔╝██║███████╗██╔████╔██║    ███████║██║
+██╔═══╝ ██╔══██╗██║╚════██║██║╚██╔╝██║    ██╔══██║██║
+██║     ██║  ██║██║███████║██║ ╚═╝ ██║    ██║  ██║██║
+╚═╝     ╚═╝  ╚═╝╚═╝╚══════╝╚═╝     ╚═╝    ╚═╝  ╚═╝╚═╝
 ```
-**AI-Powered Database Management Engine · Create · Query · Explore**
-*Electron · React · Vite · TypeScript · Supabase · TailwindCSS*
+
+### AI-Powered Database Management Desktop Application
+
+![Electron](https://img.shields.io/badge/Electron-47848F?style=for-the-badge&logo=electron&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Active-44bb44?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
+
+</div>
 
 ---
 
